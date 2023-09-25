@@ -2,26 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  padding: 0;
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --main-color: #92ba92;
+  --second-color: #525E75;
+  --third-color: #78938A;
+  --shadow-color:#92ba9233;
+  --beige-color: #F1DDBF;
+  --big-font: 5em;
+}
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Titles */
+.home-title {
+  color: var(--main-color);
+  font-size: 5em;
+  margin: 2em 0 0;
+  text-align: center;
+  text-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.home-subtitle {
+  color: var(--second-color);
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Buttons */
+.enter-btn-div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Montserrat";
+  height: 5vh;
+  margin: 0.5em 0;
+  width: 30vw;
+}
+
+/* Footer */
+.footer {
+  bottom: 0;
+  font-family: "Montserrat";
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
+
+/* For tablets */
+@media (min-width: 776px) {
+  .home-title {
+      font-size: 8em;
+      margin: 1em 0 0;
+  }
+
+  .home-subtitle {
+      font-size: 1.5em;
+  }
+
+  .btn {
+      width: 20vw;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+/* For desktop and larger screens */
+@media (min-width: 1023px) {
+  .home-title {
+      font-size: 9em;
+      margin: 1em 0 0;
+  }
+
+  .btn {
+      width: 15vw;
+  }
 }
